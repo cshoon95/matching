@@ -11,26 +11,31 @@ export class Route {
         param: any
     }[] = [];
 
+    public init(inMc: Mc) {
+        this.mc = inMc;
+        this.addEvent();
+    }
+    
     addEvent() {
         window.onpopstate = (event: any) => {
-            if (event.state.type === 'page') {
-                this.mc.store.dispatch(hidePopup({
-                    modalName: 'all'
-                }))
+            // if (event.state.type === 'page') {
+            //     this.mc.store.dispatch(hidePopup({
+            //         modalName: 'all'
+            //     }))
 
-                const showPages = this.mc.store.getState().view.showPages;
-                if (showPages[0] !== event.state.name) {
-                    this.mc.store.dispatch(showPage({
-                        pageName: event.state.name,
-                        pageParam: event.state.param
-                    }));
-                }
-            } else if (event.state.type === 'modal') {
-                const showPopups = this.mc.store.getState().view.showPopups;
-                this.mc.store.dispatch(hidePopup({
-                    modalName: showPopups[showPopups.length-1]
-                }))
-            }
+            //     const showPages = this.mc.store.getState().view.showPages;
+            //     if (showPages[0] !== event.state.name) {
+            //         this.mc.store.dispatch(showPage({
+            //             pageName: event.state.name,
+            //             pageParam: event.state.param
+            //         }));
+            //     }
+            // } else if (event.state.type === 'modal') {
+            //     const showPopups = this.mc.store.getState().view.showPopups;
+            //     this.mc.store.dispatch(hidePopup({
+            //         modalName: showPopups[showPopups.length-1]
+            //     }))
+            // }
         }
     }
 

@@ -2,12 +2,19 @@ import { Store } from "redux";
 import { initialDataState, setValue } from "../store/Data";
 import { initialViewState } from "../store/View";
 import { StoreStateType } from "../types/store";
+import { Route } from "./Route";
 import Utils from "./Utils";
 
 type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
 
 export class Mc {
     private _store!: Store;
+    private _route!: Route;
+
+    public init(inStore: Store, param: { firstPage: string }) {
+        this._store = inStore;
+        // this._route.init(this);
+    }
 
     public get store() {
         return this._store;

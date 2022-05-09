@@ -22,11 +22,14 @@ export const initialDataState: StoreStateDataType = {
     stsdate: '',
     systime: '',
     title: 'Matching',
+    pages: [
+        { type: 'page', step: 0, name: 'Register', title: '뭐로하지'}
+    ]
 }
 
 const dataReducer = (state= initialDataState, action: {
     type: string,
-    payload: any
+    payload?: any
 }) => {
     switch (action.type) {
         case SET_VALUE:
@@ -39,6 +42,8 @@ const dataReducer = (state= initialDataState, action: {
                 ...state,
                 ...action.payload
             }
+        default:
+            return state;
     }
 }
 

@@ -9,6 +9,10 @@ import { createStore, applyMiddleware, combineReducers, Store } from 'redux';
 import thunk from 'redux-thunk';
 import dataReducer from './store/Data';
 import viewReducer from './store/View';
+import Register from './comp/Register';
+import mc from './core/Mc';
+import { parseCommandLine } from 'typescript';
+import queryString from "query-string";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,15 +25,19 @@ const rootReducer = combineReducers({
 
 export type RootState = ReturnType<typeof rootReducer>;
 
-const store = createStore(
+const store: Store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+  // composeWithDevTools(applyMiddleware(thunk))
 )
 
+const parsed = queryString.parse(window.location.search);
+mc.init(store, { firstPage: parsed.firstPage as string});
+debugger
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Main />
+      <Register />
     </Provider>
   </React.StrictMode>
 );
