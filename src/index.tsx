@@ -4,11 +4,27 @@ import './index.css';
 import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './Main';
+import { composeWithDevTools } from '@reduxjs/toolkit/dist/devtoolsExtension';
+import { createStore, applyMiddleware, combineReducers, Store } from 'redux';
+import thunk from 'redux-thunk';
+import dataReducer from './store/Data';
+import viewReducer from './store/View';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const rootReducer = combineReducers({
+  dataReducer,
+  viewReducer
+})
+
+export type RootState = ReturnType<typeof rootReducer>;
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+)
 
 root.render(
   <React.StrictMode>
