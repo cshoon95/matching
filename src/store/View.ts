@@ -3,7 +3,7 @@ import { StoreStateViewType } from '../types/store';
 
 // reducer 
 export const initialViewState: StoreStateViewType = {
-
+    
 }
 
 const viewReducer = (state = initialViewState, action: any) => {
