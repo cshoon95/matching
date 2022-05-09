@@ -1,13 +1,17 @@
+import { Dispatch } from 'redux';
+import { StoreStateViewType } from '../types/store';
 
 // reducer 
 export const initialViewState: StoreStateViewType = {
 
 }
 
-const View = (state = initialViewState, action: any) {
+const viewReducer = (state = initialViewState, action: any) => {
     switch (action.type) {
 
         default:
             return state;
     }
 }
+
+export default viewReducer;

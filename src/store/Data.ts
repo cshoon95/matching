@@ -1,6 +1,6 @@
 import { createAction, ThunkDispatch } from '@reduxjs/toolkit';
 import { Dispatch } from 'redux';
-import { initialViewState } from './View';
+import { StoreStateDataType } from '../types/store';
 
 // types
 const GET_VALUE="data/GET_VALUE";
@@ -17,7 +17,8 @@ export const setValue = createAction<{
 }>(SET_VALUE)
 
 
-export const initialDataState = {
+// reducer
+export const initialDataState: StoreStateDataType = {
     stsdate: '',
     systime: '',
     title: 'Matching',
@@ -40,3 +41,5 @@ const dataReducer = (state= initialDataState, action: {
             }
     }
 }
+
+export default dataReducer;
