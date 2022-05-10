@@ -13,6 +13,7 @@ import Register from './comp/Register';
 import mc from './core/Mc';
 import { parseCommandLine } from 'typescript';
 import queryString from "query-string";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -32,12 +33,16 @@ const store: Store = createStore(
 
 const parsed = queryString.parse(window.location.search);
 mc.init(store, { firstPage: parsed.firstPage as string});
-debugger
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Main />
-      <Register />
+      <Router>
+        <Routes>
+          <Route path="/Main" element={<Main/>}/>
+          <Route path="/Register" element={<Register/>}/>
+        </Routes>
+      </Router>
     </Provider>
   </React.StrictMode>
 );

@@ -3,7 +3,7 @@ export type StoreStateDataType = {
     systime: string,
     title: string,
     pages: [
-        { type: string, step: number, name: string, title: string}
+        { type: string, step: number, name: string, title: string }
     ]
 }
 
