@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 import dataReducer from './store/Data';
 import viewReducer from './store/View';
 import Register from './comp/Register';
+import Header from './comp/Header';
 import mc from './core/Mc';
 import { parseCommandLine } from 'typescript';
 import queryString from "query-string";
@@ -37,12 +38,13 @@ mc.init(store, { firstPage: parsed.firstPage as string});
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path="/Main" element={<Main/>}/>
-          <Route path="/Register" element={<Register/>}/>
-        </Routes>
-      </Router>
+      <Header />
+        <Router>
+          <Routes>
+            <Route path="/Main" element={<Main/>}/>
+            <Route path="/Register" element={<Register/>}/>
+          </Routes>
+        </Router>
     </Provider>
   </React.StrictMode>
 );
