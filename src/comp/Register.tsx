@@ -5,9 +5,7 @@ import Image from 'react-bootstrap/Image'
 import icon from '../img/mainIcon.png';
 
 const Register = () => {
-    const labelStyle = {
-        marginTop: "1rem"
-    }
+    const labelStyle = { marginTop: "1rem" };
 
     const [validated, setValidated] = useState(false);
 

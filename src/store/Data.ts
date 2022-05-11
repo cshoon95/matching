@@ -25,7 +25,7 @@ export const initialDataState: StoreStateDataType = {
     pages: [
         { type: 'page', step: 0, name: 'Register', title: '뭐로하지'}
     ],
-    isLogin: true
+    isLogin: false
 }
 
 const dataReducer = (state= initialDataState, action: {
