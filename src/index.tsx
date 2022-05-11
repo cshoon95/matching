@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import Main from './Main';
+import Main from './comp/Main';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from '@reduxjs/toolkit/dist/devtoolsExtension';
@@ -11,10 +10,12 @@ import dataReducer from './store/Data';
 import viewReducer from './store/View';
 import Register from './comp/Register';
 import Header from './comp/Header';
+import Footer from './comp/Footer';
 import mc from './core/Mc';
 import { parseCommandLine } from 'typescript';
 import queryString from "query-string";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -39,12 +40,13 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Header />
-        <Router>
-          <Routes>
-            <Route path="/Main" element={<Main/>}/>
-            <Route path="/Register" element={<Register/>}/>
-          </Routes>
-        </Router>
+      <Router>
+        <Routes>
+          <Route path="/Main" element={<Main/>} />
+          <Route path="/Register" element={<Register/>} />
+        </Routes>
+      </Router>
+      <Footer/>
     </Provider>
   </React.StrictMode>
 );
