@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ac {
+  display: block; 
+  margin: auto;
+}
+
+.mgl-01{
+  margin-left: 1rem
+}
+
+.mgr-01{
+  margin-right: 1rem
+}
+
+.mgt-01{
+  margin-top: 1rem
+}
+
+.mgt-02{
+  margin-top: 2rem
+}
+
+.mgt-05{
+  margin-top: 5rem
+}
+
+.mgt-08{
+  margin-top: 8rem
+}
+
+.mgb-01{
+  margin-bottom: 1rem
+}
+
+.mgb-02{
+  margin-bottom: 2rem
+}
+
+.mgb-05{
+  margin-bottom: 5rem
+}
+
+.mgb-08{
+  margin-bottom: 8rem
+}
