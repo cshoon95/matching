@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Form, Row, Col, InputGroup, Button} from 'react-bootstrap';
 import mc from '../core/Mc';
 import Image from 'react-bootstrap/Image'
-import icon from '../style/img/mainIcon.png';
+import icon from '../img/mainIcon.png';
 
 const Register = () => {
     const labelStyle = {
         marginTop: "1rem"
     }
+
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event: any) => {
@@ -23,18 +24,18 @@ const Register = () => {
 
     return (
         <>
-        <Image src={icon} rounded style={{ display : 'block', margin : 'auto', marginTop: '2rem'}}/>
+        <Image src={icon} className="ac mgt-02" rounded />
         <Form noValidate validated={validated} onSubmit={handleSubmit} style={{marginTop: '2rem'}}>
-            <Row className="mb-3">
+            <Row className="mb-3 mgl-01 mgr-01">
                 <Form.Group as={Col} md="4" controlId="registerID">
                     <Form.Label style={labelStyle}>아이디</Form.Label>
                     <Form.Control
                         required
                         type="text"
-                        placeholder="아이디를 입력해주세요."
+                        placeholder="아이디를 입력해 주세요."
                     />
                     <Form.Control.Feedback type="invalid">
-                        아이디를 정확히 입력해주세요.
+                        아이디를 정확히 입력해 주세요.
                     </Form.Control.Feedback>
                 </Form.Group>
 
@@ -43,10 +44,10 @@ const Register = () => {
                     <Form.Control
                         required
                         type="password"
-                        placeholder="비밀번호를 입력해주세요."
+                        placeholder="비밀번호를 입력해 주세요."
                     />
                     <Form.Control.Feedback type="invalid">
-                        비밀번호를 정확히 입력해주세요.
+                        비밀번호를 정확히 입력해 주세요.
                     </Form.Control.Feedback>
                 </Form.Group>
 
@@ -55,10 +56,10 @@ const Register = () => {
                     <Form.Control
                         required
                         type="password"
-                        placeholder="비밀번호를 입력해주세요."
+                        placeholder="비밀번호를 입력해 주세요."
                     />
                     <Form.Control.Feedback type="invalid">
-                        비밀번호 확인을 정확히 입력해주세요.
+                        비밀번호 확인을 정확히 입력해 주세요.
                     </Form.Control.Feedback>
                 </Form.Group>
 
@@ -66,15 +67,15 @@ const Register = () => {
                     <Form.Label style={labelStyle}>이름</Form.Label>
                     <Form.Control
                     type="text"
-                    placeholder="Username"
+                    placeholder="이름을 입력해 주세요."
                     required
                     />
                     <Form.Control.Feedback type="invalid">
-                        이름을 정확히 입력해주세요.
+                        이름을 정확히 입력해 주세요.
                     </Form.Control.Feedback>
                 </Form.Group>
             </Row>
-            <Button type="submit">Submit form</Button>
+            <Button type="submit" className="ac mgt-02">가입하기</Button>
         </Form>
         </>
     );
