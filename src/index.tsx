@@ -9,6 +9,7 @@ import thunk from 'redux-thunk';
 import dataReducer from './store/Data';
 import viewReducer from './store/View';
 import Register from './comp/Register';
+import Login from './comp/Login';
 import Header from './comp/Header';
 import Footer from './comp/Footer';
 import mc from './core/Mc';
@@ -45,6 +46,7 @@ root.render(
         <Routes>
           <Route path="/Main" element={<Main/>} />
           <Route path="/Register" element={<Register/>} />
+          <Route path="/Login" element={<Login/>} />
         </Routes>
       </Router>
       <Footer/>
