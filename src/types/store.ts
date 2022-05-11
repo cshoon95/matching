@@ -4,7 +4,8 @@ export type StoreStateDataType = {
     title: string,
     pages: [
         { type: string, step: number, name: string, title: string }
-    ]
+    ],
+    isLogin: boolean
 }
 
 export type StoreStateViewType = {

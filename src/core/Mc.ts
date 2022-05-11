@@ -24,9 +24,13 @@ export class Mc {
     public get state(): StoreStateType {
         return this.store.getState();
     }
+    
+    public getValue(key: ValueType) {
+        return this._store.getState()['dataReducer'][key];
+    }
 
     public setValue(key: ValueType, value: any, reducerName?: string, isDispatch?: boolean): void {
-        reducerName = reducerName || 'data';
+        reducerName = reducerName || 'dataReducer';
 
         if (isDispatch) {
             this._store.dispatch(setValue({
