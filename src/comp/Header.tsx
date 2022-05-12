@@ -4,6 +4,7 @@ import mc from '../core/Mc';
 import { setValue } from '../store/Data';
 
 const Header = () => {
+    const isMobile = mc.getValue('isMobile');
     const currIsLogin = mc.getValue('isLogin');
     const [isLogin, setIsLogin] = useState(currIsLogin);
 
