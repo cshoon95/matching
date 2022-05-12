@@ -26,11 +26,11 @@ export class Mc {
     }
     
     public getValue(key: ValueType) {
-        return this._store.getState()['dataReducer'][key];
+        return this._store.getState()['data'][key];
     }
 
     public setValue(key: ValueType, value: any, reducerName?: string, isDispatch?: boolean): void {
-        reducerName = reducerName || 'dataReducer';
+        reducerName = reducerName || 'data';
 
         if (isDispatch) {
             this._store.dispatch(setValue({

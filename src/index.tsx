@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from '@reduxjs/toolkit/dist/devtoolsExtension';
 import { createStore, applyMiddleware, combineReducers, Store } from 'redux';
 import thunk from 'redux-thunk';
-import dataReducer from './store/Data';
-import viewReducer from './store/View';
+import data from './store/Data';
+import view from './store/View';
 import Register from './comp/Register';
 import Login from './comp/Login';
 import Header from './comp/Header';
@@ -24,8 +24,8 @@ const root = ReactDOM.createRoot(
 );
 
 const rootReducer = combineReducers({
-  dataReducer,
-  viewReducer
+  data,
+  view
 })
 
 export type RootState = ReturnType<typeof rootReducer>;
