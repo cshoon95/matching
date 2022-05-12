@@ -5,7 +5,8 @@ export type StoreStateDataType = {
     pages: [
         { type: string, step: number, name: string, title: string }
     ],
-    isLogin: boolean
+    isLogin: boolean,
+    isMobile: boolean
 }
 
 export type StoreStateViewType = {
