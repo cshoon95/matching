@@ -5,20 +5,12 @@ import mc from '../core/Mc';
 import MainTab from './MainTab';
 import Introduction from './Introduction';
 
-const Home = () => {
-  return (
-    <>
-      <MainTab/>
-    </>
-  )
-}
-
 const Main = () => {
   const isMobile: boolean = mc.getValue('isMobile');
   
   return (
     <>
-      {isMobile ? <Home/> : <Introduction/>}
+      {isMobile ? <MainTab/> : <Introduction/>}
     </>
   );
 }
