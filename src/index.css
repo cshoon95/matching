@@ -41,3 +41,13 @@
 .mgb-08{
   margin-bottom: 8rem
 }
+
+/* height */
+.h-200 {
+  height: 200px;
+}
+
+/* display */
+.d-none {
+  display: none;
+}

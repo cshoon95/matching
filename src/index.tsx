@@ -12,7 +12,6 @@ import Register from './comp/Register';
 import Login from './comp/Login';
 import Header from './comp/Header';
 import Footer from './comp/Footer';
-import Introduction from './comp/Introduction';
 import mc from './core/Mc';
 import { parseCommandLine } from 'typescript';
 import queryString from "query-string";
@@ -47,8 +46,7 @@ root.render(
       <Header />
       <Router>
         <Routes>
-          <Route path="/Introduction" element={<Introduction/>} /> 
-          <Route path="/Main" element={<Main/>} />
+          <Route path="/" element={<Main/>} />
           <Route path="/Register" element={<Register/>} />
           <Route path="/Login" element={<Login/>} />
         </Routes>
