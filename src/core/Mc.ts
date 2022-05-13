@@ -29,16 +29,8 @@ export class Mc {
         return this._store.getState()['data'][key];
     }
 
-    public setValue(key: ValueType, value: any, reducerName?: string, isDispatch?: boolean): void {
-        reducerName = reducerName || 'data';
-
-        if (isDispatch) {
-            this._store.dispatch(setValue({
-                [key]: value
-            }))
-        } else {
-            this._store.getState()[reducerName][key] = value;
-        }
+    public setValue(key: ValueType, value: any): void {
+        this._store.dispatch(setValue({ [key]: value }));
     }
 }
 
