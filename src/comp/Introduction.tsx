@@ -8,6 +8,7 @@ const Introduction = () => {
             <Image src={icon} className="ac mgt-02"  />
             <h2 className="tac">
                 Matching에 오신 것을 환영합니다.
+                현재 Matching은 모바일을 통해서만 이용하실 수 있습니다.
             </h2>
             <Container className="mgt-08">
                 <Row>
