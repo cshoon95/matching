@@ -19,8 +19,8 @@ export const setValue = createAction<{
 
 // reducer
 export const initialDataState: StoreStateDataType = {
-    sysdate: Utils.sysdate(),
-    systime: Utils.systime(),
+    sysdate: Utils.sysdate(new Date()),
+    systime: Utils.systime(new Date()),
     title: 'Matching',
     pages: [
         { type: 'page', step: 0, name: 'Register', title: '뭐로하지'}

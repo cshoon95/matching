@@ -2,7 +2,6 @@ import { Store } from "redux";
 import { initialDataState, setValue } from "../store/Data";
 import { initialViewState } from "../store/View";
 import { StoreStateType } from "../types/store";
-import Utils from "./Utils";
 
 type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
 

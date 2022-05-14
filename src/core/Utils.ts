@@ -1,29 +1,35 @@
 class Utils {
     isMobile(): boolean {
         const user = navigator.userAgent;
-        let isCheck = false;
 
-        if ( user.indexOf("iPhone") > -1 || user.indexOf("Android") > -1 ) {
-            isCheck = true;
-        }
+        if ( user.indexOf("iPhone") > -1 || user.indexOf("Android") > -1 ) return true;
 
-        return isCheck;
+        return false;
     }
-    sysdate(): string {
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = ('0' + (today.getMonth() + 1)).slice(-2);
-        const day = ('0' + today.getDate()).slice(-2);
+    sysdate(date: Date): string {
+        const year = date.getFullYear();
+        const month = ('0' + (date.getMonth() + 1)).slice(-2);
+        const day = ('0' + date.getDate()).slice(-2);
 
         return year + month + day;
     }
-    systime(): string {
-        const today = new Date();   
-        const hours = ('0' + today.getHours()).slice(-2); 
-        const minutes = ('0' + today.getMinutes()).slice(-2);
-        const seconds = ('0' + today.getSeconds()).slice(-2); 
-        
+    systime(date: Date): string {
+        const hours = ('0' + date.getHours()).slice(-2); 
+        const minutes = ('0' + date.getMinutes()).slice(-2);
+        const seconds = ('0' + date.getSeconds()).slice(-2); 
+
         return hours + minutes + seconds;
+    }
+    getDayArr(day: number): Date[] {
+        const today = new Date();
+        const endDate = new Date(today.setDate(today.getDate() + day));
+        let arr: Date[]=[];
+        
+        for(let date=new Date(); date <= endDate; date.setDate(date.getDate()+1)) {
+            arr.push(new Date(date));
+        }
+        
+        return arr;
     }
 }
 
