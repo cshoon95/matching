@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonGroup, Button, DropdownButton, Dropdown } from 'react-bootstrap';
 import List from '../core/List';
+import mc from '../core/Mc';
 
 const FilterButtonGroup = () => {
     return (
@@ -20,7 +21,7 @@ const FilterButtonGroup = () => {
                     return <Dropdown.Item eventKey={index} key={index}>{item.label}</Dropdown.Item>
                 })}
             </DropdownButton>
-            <Button className="mb-3">마감 가리기</Button>
+            <Button className="mb-3">{mc.getValue('currTab') === 'socialMatch' ? '마감 가리기' : '예약 가능'}</Button>
         </ButtonGroup>
     )
 };
