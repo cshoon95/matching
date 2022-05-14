@@ -6,7 +6,7 @@ import carousel3 from '../img/carousel3.jpeg';
 
 const CarouselPanel = () => {
     return (
-        <Carousel fade>
+        <Carousel fade className="mgl-01 mgr-01">
             <Carousel.Item>
                 <img
                     className="d-block w-100 h-200"

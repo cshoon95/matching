@@ -10,8 +10,7 @@ import data from './store/Data';
 import view from './store/View';
 import Register from './comp/Register';
 import Login from './comp/Login';
-import Header from './comp/Header';
-import Footer from './comp/Footer';
+import Header from './module/Header';
 import mc from './core/Mc';
 import { parseCommandLine } from 'typescript';
 import queryString from "query-string";
@@ -51,7 +50,6 @@ root.render(
           <Route path="/Login" element={<Login/>} />
         </Routes>
       </Router>
-      <Footer/>
     </Provider>
   </React.StrictMode>
 );
