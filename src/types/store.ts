@@ -1,5 +1,5 @@
 export type StoreStateDataType = {
-    stsdate: string,
+    sysdate: string,
     systime: string,
     title: string,
     pages: [
