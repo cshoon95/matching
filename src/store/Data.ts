@@ -22,11 +22,10 @@ export const initialDataState: StoreStateDataType = {
     sysdate: Utils.sysdate(new Date()),
     systime: Utils.systime(new Date()),
     title: 'Matching',
-    pages: [
-        { type: 'page', step: 0, name: 'Register', title: '뭐로하지'}
-    ],
+    currTab: 'socialMatch',
     isLogin: false,
-    isMobile: Utils.isMobile()
+    isMobile: Utils.isMobile(),
+    
 }
 
 const dataReducer = (state= initialDataState, action: {

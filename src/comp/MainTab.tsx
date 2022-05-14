@@ -4,6 +4,7 @@ import Carousel from '../module/Carousel';
 import Calendar from '../module/Calendar';
 import MatchList from '../module/MatchList';
 import FilterButtonGroup from '../module/FilterButtonGroup';
+import mc from '../core/Mc';
 
 const MainTab = () => {
     const [key, setKey] = useState('socialMatch');
@@ -12,7 +13,13 @@ const MainTab = () => {
         <Tabs
             id="controlled-tab-example"
             activeKey={key}
-            onSelect={(selectedKey: string | null) => { if (selectedKey) setKey(selectedKey); }}
+            onSelect={(selectedKey: string | null) => { 
+                if (selectedKey) {
+                    //! 이부분 추후 수정하자
+                    setKey(selectedKey);
+                    mc.setValue('currTab', selectedKey); 
+                }
+            }}
             className="mgl-01 mgr-01 mb-3"
         >
             <Tab eventKey="socialMatch" title="소셜 매치">
