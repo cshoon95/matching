@@ -7,7 +7,7 @@ import Introduction from './Introduction';
 
 const Main = () => {
   const isMobile: boolean = mc.getValue('isMobile');
-  
+
   return (
     <>
       {isMobile ? <MainTab/> : <Introduction/>}

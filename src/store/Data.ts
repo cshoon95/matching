@@ -25,7 +25,7 @@ export const initialDataState: StoreStateDataType = {
     currTab: 'socialMatch',
     isLogin: false,
     isMobile: Utils.isMobile(),
-    
+    stadiumInfo: undefined
 }
 
 const dataReducer = (state= initialDataState, action: {

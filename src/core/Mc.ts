@@ -7,7 +7,7 @@ type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
 
 export class Mc {
     private _store!: Store;
-
+    
     public init(inStore: Store, param: { firstPage: string }) {
         this._store = inStore;
     }
