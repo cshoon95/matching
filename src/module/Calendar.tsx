@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import mc from '../core/Mc';
-import Utils from '../core/Utils';
+import mc from '../core/Mc';
 
 const Calendar = () => {
     const [key, setKey] = useState('socialMatch');
-    const dayArr = Utils.getDayArr(6);
+    const dayArr = mc.utils.getDayArr(6);
 
     return (
         <Tabs

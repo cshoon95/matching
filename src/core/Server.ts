@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Progress from '../module/Progress';
 import mc from '../core/Mc';
+
 class Server {
     private initAxios = () => {
         return axios.create({
@@ -10,21 +11,19 @@ class Server {
     };
     private axios = this.initAxios();
 
-    public run(args:any, isAsync: boolean = false) {
+    public run(name: string, isAsync: boolean = false) {
 		const isSimple = isAsync;
 
+		axios.get('/dummy/' + name + '.json')
+			.then((res) => {
+				console.log(res);
+			})
+
 		if(!isSimple){
-			mc.showLoading('sh')
+			mc.showLoading();
 		}
 
 		return new Promise(async (resolve, reject)=> {
-			const res: IGetType = await this.post(runInfo);
-			if (res.errorCode || res.isErrorCheck) {
-				reject(res);
-			} else {
-				resolve(res);
-			}
-
 			mc.hideLoading();
 		});
 
