@@ -9,6 +9,9 @@ import mc from '../core/Mc';
 
 const MainTab = () => {
     const [key, setKey] = useState('socialMatch');
+    mc.setValue('systime', mc.utils.systime(new Date()));
+    mc.setValue('sysdate', mc.utils.sysdate(new Date()));
+    mc.setValue('isMobile', mc.utils.isMobile());
 
     return (
         <Tabs
