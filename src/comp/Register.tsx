@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Row, Col, InputGroup, Button, Image} from 'react-bootstrap';
-import mc from '../core/Mc';
+import { Form, Row, Col, Button, Image} from 'react-bootstrap';
 import icon from '../img/mainIcon.png';
 
 const Register = () => {
@@ -21,7 +20,7 @@ const Register = () => {
 
     return (
         <>
-        <Image src={icon} className="ac mgt-02" rounded />
+        <Image src={icon} className="ac mgt-02" rounded /> 
         <Form noValidate validated={validated} onSubmit={handleSubmit} style={{marginTop: '2rem'}}>
             <Row className="mb-3 mgl-01 mgr-01">
                 <Form.Group as={Col} md="4" controlId="registerID">

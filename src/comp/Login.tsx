@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Row, Col, InputGroup, Button, Image } from 'react-bootstrap';
-import mc from '../core/Mc';
+import { Form, Row, Col, Button, Image } from 'react-bootstrap';
 import icon from '../img/mainIcon.png';
 
 const Login = () => {
