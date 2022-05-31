@@ -1,6 +1,6 @@
 import { Store } from "redux";
 import { initialDataState, setValue } from "../store/Data";
-import { initialViewState } from "../store/View";
+import { initialViewState, showLoading, hideLoading } from "../store/View";
 import { StoreStateType } from "../types/store";
 
 type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
@@ -17,7 +17,7 @@ export class Mc {
     }
 
     public set store(inStore: Store) {
-        this._store = inStore;
+        this.store = inStore;
     }
 
     public get state(): StoreStateType {
@@ -25,11 +25,26 @@ export class Mc {
     }
     
     public getValue(key: ValueType) {
-        return this._store.getState()['data'][key];
+        return this.store.getState()['data'][key];
     }
 
     public setValue(key: ValueType, value: any): void {
-        this._store.dispatch(setValue({ [key]: value }));
+        if(!this.store)return;
+        this.store.dispatch(setValue({ [key]: value }));
+    }
+
+    public showLoading(name: string) {
+        if (!this.store) return;
+        this.store.dispatch(showLoading({
+            loadingName: name
+        }))
+    }
+
+    public hideLoading(name: string) {
+        if (!this.store) return;
+        this.store.dispatch(hideLoading({
+            loadingName: name
+        }))
     }
 }
 
