@@ -1,7 +1,5 @@
-import { createAction, ThunkDispatch } from '@reduxjs/toolkit';
-import { Dispatch } from 'redux';
+import { createAction } from '@reduxjs/toolkit';
 import { StoreStateDataType } from '../types/store';
-import mc from "../core/Mc";
 
 // types
 const GET_VALUE="data/GET_VALUE";
@@ -20,13 +18,14 @@ export const setValue = createAction<{
 
 // reducer
 export const initialDataState: StoreStateDataType = {
-    sysdate: mc.utils.sysdate(new Date()),
-    systime: mc.utils.systime(new Date()),
+    sysdate: '',
+    systime: '',
     title: 'Matching',
     currTab: 'socialMatch',
     isLogin: false,
-    isMobile: mc.utils.isMobile(),
-    stadiumInfo: undefined
+    isMobile: true,
+    stadiumInfo: undefined,
+    matchListInfo: undefined
 }
 
 const dataReducer = (state= initialDataState, action: {

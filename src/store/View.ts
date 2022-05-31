@@ -26,7 +26,7 @@ const viewReducer = (state = initialViewState, action: any) => {
         case SHOW_LOADING:
             return {
                 ...state,
-                showLoadingName: action.peyload.loadingName
+                showLoadingName: action.payload.loadingName
             }
         case HIDE_LOADING:
             return {

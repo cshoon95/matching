@@ -5,7 +5,8 @@ export type StoreStateDataType = {
     currTab: string,
     isLogin: boolean,
     isMobile: boolean
-    stadiumInfo?: [subStadiumInfo]
+    stadiumInfo?: [Stadium],
+    matchListInfo?: [Match]
 }
 
 export type StoreStateViewType = {
@@ -16,7 +17,7 @@ export type StoreStateType = {
     
 }
 
-type subStadiumInfo = {
+type Stadium = {
     SUM_YY: string,
     SIGUN_NM: string,
     FACLT_NM: string,
@@ -42,4 +43,11 @@ type subStadiumInfo = {
     REFINE_ROADNM_ADDR: undefined | string,
     REFINE_WGS84_LAT: undefined | string,
     REFINE_WGS84_LOGT: undefined | string
+}
+
+type Match = {
+    time: string,
+    stadiumInfo: Stadium,
+    numbers: number,
+    level: string
 }

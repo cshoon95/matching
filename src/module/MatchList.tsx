@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ListGroup, Badge, Button } from 'react-bootstrap';
+import mc from '../core/Mc';
 
 const MatchList = () => {
+    useEffect(() => {
+        mc.server.run('matchListInfo')
+    },[])
+
     return (
         <ListGroup as="ol" className="mgl-01 mgr-01">
             <ListGroup.Item
