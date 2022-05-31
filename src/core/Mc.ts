@@ -1,11 +1,12 @@
 import { Store } from "redux";
+import { StoreStateType } from "../types/store";
 import { initialDataState, setValue } from "../store/Data";
 import { initialViewState, showLoading, hideLoading } from "../store/View";
-import { StoreStateType } from "../types/store";
+import Server from "./Server";
 import Utils from "./Utils";
-import Server  from "./Server";
+import List from "./List";
 
-type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
+export type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
 
 export class Mc {
     private _store!: Store;
@@ -33,7 +34,11 @@ export class Mc {
     public get utils() {
         return Utils;
     }
-    
+
+    public get list() {
+        return List;
+    }
+
     public getValue(key: ValueType) {
         return this.store.getState()['data'][key];
     }
