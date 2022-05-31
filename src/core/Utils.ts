@@ -33,4 +33,4 @@ class Utils {
     }
 }
 
-export default Utils.prototype;
+export default new Utils();

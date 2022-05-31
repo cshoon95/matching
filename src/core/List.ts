@@ -22,4 +22,4 @@ class List {
     }
 }
 
-export default List.prototype;
+export default new List();
