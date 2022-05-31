@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
-import mc from '../core/Mc';
 import mc from '../core/Mc';
 
 const Calendar = () => {
