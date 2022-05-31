@@ -1,0 +1,34 @@
+[
+    {
+        "time": "20220101",
+        "stadiumInfo":  {
+            "SUM_YY": "2018",
+            "SIGUN_NM": "가평군",
+            "FACLT_NM": "조종생활체육공원 축구장",
+            "COMPLTN_YY": "2009",
+            "POSESN_INST_NM": "가평군",
+            "MANAGE_MAINBD_NM": "시설관리공단",
+            "BOTM_MATRL_NM": "토사",
+            "BT": "68",
+            "COMPRT_CNT": "1",
+            "AR": "7140",
+            "LENG": "105",
+            "TOT_AR": "",
+            "BUILD_AR": "",
+            "PLOT_AR": "43062",
+            "CONSTR_BIZ_EXPN": "6820",
+            "ACEPTNC_PSNCNT": "",
+            "AUDTRM_SEAT_CNT": "",
+            "SEAT_FORM_NM": "",
+            "BUILD_RSCU_NM": "",
+            "RM_MATR": "",
+            "REFINE_ZIPNO": "",
+            "REFINE_LOTNO_ADDR": "",
+            "REFINE_ROADNM_ADDR": "",
+            "REFINE_WGS84_LAT": "",
+            "REFINE_WGS84_LOGT": ""
+        },
+        "numbers": 11,
+        "level": "A"
+    }
+]
