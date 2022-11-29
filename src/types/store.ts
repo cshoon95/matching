@@ -10,11 +10,52 @@ export type StoreStateDataType = {
 }
 
 export type StoreStateViewType = {
-    
+    alertMessage: string;
+    alertOptions: AlertOptionsType;
+    loadingName: string;
+    loadingOptions: LodingOptionsType;
 }
 
+export type AlertOptionsType = {
+    title: string;
+    confirm: string;
+    color: 'error' | 'info' | 'success' | 'warning';
+    compFunc: Function;
+    callbackFunc: Function;
+}
+
+export const initAlertOptions: AlertOptionsType = {
+    title: '',
+    confirm: '확인',
+    color: 'success',
+    compFunc: () => {},
+    callbackFunc: () => {},
+};
+
+export type LodingOptionsType = {
+    color:
+        | 'inherit'
+        | 'primary'
+        | 'secondary'
+        | 'error'
+        | 'info'
+        | 'success'
+        | 'warning';
+    disableShrink: boolean;
+    size: number | string;
+    thickness: number;
+}
+
+export const initLoadingOptions: LodingOptionsType = {
+    color: 'success',
+    disableShrink: false,
+    size: 40,
+    thickness: 3.6,
+};
+
 export type StoreStateType = {
-    
+    data: StoreStateDataType;
+    view: StoreStateViewType;
 }
 
 type Stadium = {

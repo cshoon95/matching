@@ -17,18 +17,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import { store } from './store/Store';
+import CustomAlert from './material/CustomAlert';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-
-const rootReducer = combineReducers({
-  data,
-  view
-})
-
-export type RootState = ReturnType<typeof rootReducer>;
-
 
 mc.init(store);
 
@@ -38,13 +31,17 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Main/>} />
-          <Route path="/Register" element={<Register/>} />
-          <Route path="/Login" element={<Login/>} />
-        </Routes>
-      </Router>
+      <div>
+        <CustomAlert/>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Main/>} />
+            <Route path="/Register" element={<Register/>} />
+            <Route path="/Login" element={<Login/>} />
+          </Routes>
+        </Router>
+
+      </div>
     </Provider>
   </React.StrictMode>
 );

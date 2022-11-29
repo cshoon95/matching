@@ -1,7 +1,7 @@
 import { Store } from "redux";
-import { StoreStateType } from "../types/store";
+import { StoreStateType, AlertOptionsType } from "../types/store";
 import { initialDataState, setState } from "../store/Data";
-import { initialViewState, showLoading, hideLoading } from "../store/View";
+import { initialViewState, showLoading, hideLoading, showAlert, hideAlert } from "../store/View";
 import Server from "./Server";
 import Utils from "./Utils";
 import List from "./List";
@@ -60,6 +60,43 @@ export class Mc {
         this.store.dispatch(hideLoading({
             loadingName: name
         }))
+    }
+
+    public alert(message: string, options?: AlertOptionsType) {
+        if (message === 'hide') {
+            this.store.dispatch(hideAlert());
+        } else {
+            this.store.dispatch(
+                showAlert({
+                    message,
+                    options: options,
+                }),
+            );
+        }
+    }
+
+    public log(message: any) {
+        console.log(message);
+    }
+
+    public warnLog(message: any) {
+        console.warn(message);
+    }
+
+    public infoLog(message: any) {
+        console.info(message);
+    }
+
+    public groupLog(messages: Array<any>) {
+        console.group();
+        messages.map(message => console.log(message));
+        console.groupEnd();
+    }
+
+    public timeLog(message: any, func: Function) {
+        console.time(message);
+        func();
+        console.timeEnd(message);
     }
 }
 
