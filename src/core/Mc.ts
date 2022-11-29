@@ -6,7 +6,7 @@ import Server from "./Server";
 import Utils from "./Utils";
 import List from "./List";
 
-export type ValueType = keyof typeof initialDataState | keyof typeof initialViewState;
+export type StateType = keyof typeof initialDataState | keyof typeof initialViewState;
 
 export class Mc {
     private _store!: Store;
@@ -39,11 +39,11 @@ export class Mc {
         return List;
     }
 
-    public getState(key: ValueType) {
-        return this.store.getState()['data'][key];
+    public getState(key: StateType, type: string = 'data') {
+        return this.store.getState()[type][key];
     }
 
-    public setState(key: ValueType, value: any): void {
+    public setState(key: StateType, value: any): void {
         if(!this.store)return;
         this.store.dispatch(setState({ [key]: value }));
     }
