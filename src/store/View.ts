@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { StoreStateViewType, AlertOptionsType, initAlertOptions, initLoadingOptions } from '../types/store';
+import { StoreStateViewType, AlertOptionsType, initAlertOptions, initLoadingOptions, initDropdownOptions } from '../types/store';
 
 // types
 export const SHOW_LOADING   = "view/SHOW_LOADING";
@@ -22,7 +22,8 @@ export const initialViewState: StoreStateViewType = {
     alertMessage: '',
     alertOptions: initAlertOptions,
     loadingName: '',
-    loadingOptions: initLoadingOptions
+    loadingOptions: initLoadingOptions,
+    dropdownOptions: initDropdownOptions
 }
 
 const viewReducer = (state = initialViewState, action: any) => {

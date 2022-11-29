@@ -18,6 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import { store } from './store/Store';
 import CustomAlert from './material/CustomAlert';
+import CustomLoading from './material/CustomLoading';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -32,6 +33,7 @@ root.render(
     <Provider store={store}>
       <Header />
       <div>
+        <CustomLoading/>
         <CustomAlert/>
         <Router>
           <Routes>

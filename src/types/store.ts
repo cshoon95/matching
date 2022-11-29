@@ -1,3 +1,8 @@
+export type StoreStateType = {
+    data: StoreStateDataType;
+    view: StoreStateViewType;
+}
+
 export type StoreStateDataType = {
     sysdate: string,
     systime: string,
@@ -14,6 +19,7 @@ export type StoreStateViewType = {
     alertOptions: AlertOptionsType;
     loadingName: string;
     loadingOptions: LodingOptionsType;
+    dropdownOptions: DropdownOptionsType;
 }
 
 export type AlertOptionsType = {
@@ -23,14 +29,6 @@ export type AlertOptionsType = {
     compFunc: Function;
     callbackFunc: Function;
 }
-
-export const initAlertOptions: AlertOptionsType = {
-    title: '',
-    confirm: '확인',
-    color: 'success',
-    compFunc: () => {},
-    callbackFunc: () => {},
-};
 
 export type LodingOptionsType = {
     color:
@@ -46,16 +44,36 @@ export type LodingOptionsType = {
     thickness: number;
 }
 
-export const initLoadingOptions: LodingOptionsType = {
+export type DropdownOptionsType = {
+    id: string,
+    title: string;
+    titleEn: string;
+    items: [{code: string, label: string}]
+    onChange: Function;
+}
+
+// init
+export const initAlertOptions: AlertOptionsType = {
+    title: '',
+    confirm: '확인',
     color: 'success',
+    compFunc: () => {},
+    callbackFunc: () => {},
+};
+
+export const initLoadingOptions: LodingOptionsType = {
+    color: 'primary',
     disableShrink: false,
     size: 40,
     thickness: 3.6,
 };
 
-export type StoreStateType = {
-    data: StoreStateDataType;
-    view: StoreStateViewType;
+export const initDropdownOptions: DropdownOptionsType = {
+    id: '',
+    title: '',
+    titleEn: '',
+    items: [{code: '', label: ''}],
+    onChange: () => {}
 }
 
 type Stadium = {
