@@ -2,18 +2,18 @@ import { createAction } from '@reduxjs/toolkit';
 import { StoreStateDataType } from '../types/store';
 
 // types
-const GET_VALUE="data/GET_VALUE";
-const SET_VALUE="data/SET_VALUE";
+const GET_STATE="data/GET_STATE";
+const SET_STATE="data/SET_STATE";
 
 
 // actions
-export const getValue = createAction<{
-    getValue: any
-}>(GET_VALUE)
+export const getState = createAction<{
+    getState: any
+}>(GET_STATE)
 
-export const setValue = createAction<{
+export const setState = createAction<{
     [key: string]:any
-}>(SET_VALUE)
+}>(SET_STATE)
 
 
 // reducer
@@ -33,12 +33,7 @@ const dataReducer = (state= initialDataState, action: {
     payload?: any
 }) => {
     switch (action.type) {
-        case SET_VALUE:
-            return {
-                ...state,
-                ...action.payload
-            }
-        case GET_VALUE:
+        case GET_STATE: case SET_STATE:
             return {
                 ...state,
                 ...action.payload
