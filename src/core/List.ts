@@ -20,6 +20,6 @@ class List {
                 { code: '02', label: '아마추어2 이상'},
                 { code: '03', label: '일반'}];
     }
-}
+} 
 
 export default new List();
