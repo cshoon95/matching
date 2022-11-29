@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import Main from './comp/Main';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { composeWithDevTools } from '@reduxjs/toolkit/dist/devtoolsExtension';
-import { createStore, applyMiddleware, combineReducers, Store } from 'redux';
+import { createSlice, composeWithDevTools } from '@reduxjs/toolkit';
+import { createSlice, applyMiddleware, combineReducers, Store } from 'redux';
 import thunk from 'redux-thunk';
 import data from './store/Data';
 import view from './store/View';
@@ -12,7 +12,6 @@ import Register from './comp/Register';
 import Login from './comp/Login';
 import Header from './module/Header';
 import mc from './core/Mc';
-import { parseCommandLine } from 'typescript';
 import queryString from "query-string";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,10 +33,9 @@ const store: Store = createStore(
   // composeWithDevTools(applyMiddleware(thunk))
 )
 
-const parsed = queryString.parse(window.location.search);
-mc.init(store, { firstPage: parsed.firstPage as string});
+mc.init(store);
 
-const isMobile = mc.getValue('isMobile');
+const isMobile = mc.getState('isMobile');
 
 root.render(
   <React.StrictMode>
