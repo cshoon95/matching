@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import mc from '../core/Mc';
-import { setValue } from '../store/Data';
+import { setState } from '../store/Data';
 
 const Header = () => {
-    const currIsLogin = mc.getValue('isLogin');
+    const currIsLogin = mc.getState('isLogin');
     const [isLogin, setIsLogin] = useState(currIsLogin);
 
     return(
@@ -19,7 +19,7 @@ const Header = () => {
                         navbarScroll
                     >
                         {isLogin ? <Nav.Link onClick={() => {
-                            mc.store.dispatch(setValue({isLogin: false}));
+                            mc.store.dispatch(setState({isLogin: false}));
                             setIsLogin(false);
                             document.location.href = '/Main' // 추후 삭제 
                         }}>Logout</Nav.Link> 

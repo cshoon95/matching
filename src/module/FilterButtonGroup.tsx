@@ -20,7 +20,7 @@ const FilterButtonGroup = () => {
                     return <Dropdown.Item eventKey={index} key={index}>{item.label}</Dropdown.Item>
                 })}
             </DropdownButton>
-            <Button className="mb-3">{mc.getValue('currTab') === 'socialMatch' ? '마감 가리기' : '예약 가능'}</Button>
+            <Button className="mb-3">{mc.getState('currTab') === 'socialMatch' ? '마감 가리기' : '예약 가능'}</Button>
         </ButtonGroup>
     )
 };

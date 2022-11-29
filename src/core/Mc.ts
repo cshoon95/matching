@@ -1,6 +1,6 @@
 import { Store } from "redux";
 import { StoreStateType } from "../types/store";
-import { initialDataState, setValue } from "../store/Data";
+import { initialDataState, setState } from "../store/Data";
 import { initialViewState, showLoading, hideLoading } from "../store/View";
 import Server from "./Server";
 import Utils from "./Utils";
@@ -11,7 +11,7 @@ export type ValueType = keyof typeof initialDataState | keyof typeof initialView
 export class Mc {
     private _store!: Store;
     
-    public init(inStore: Store, param: { firstPage: string }) {
+    public init(inStore: Store) {
         this._store = inStore;
     }
 
@@ -39,13 +39,13 @@ export class Mc {
         return List;
     }
 
-    public getValue(key: ValueType) {
+    public getState(key: ValueType) {
         return this.store.getState()['data'][key];
     }
 
-    public setValue(key: ValueType, value: any): void {
+    public setState(key: ValueType, value: any): void {
         if(!this.store)return;
-        this.store.dispatch(setValue({ [key]: value }));
+        this.store.dispatch(setState({ [key]: value }));
     }
     
     public showLoading(name: string ='normal') {

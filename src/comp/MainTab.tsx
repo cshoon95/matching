@@ -9,9 +9,9 @@ import mc from '../core/Mc';
 
 const MainTab = () => {
     const [key, setKey] = useState('socialMatch');
-    mc.setValue('systime', mc.utils.systime(new Date()));
-    mc.setValue('sysdate', mc.utils.sysdate(new Date()));
-    mc.setValue('isMobile', mc.utils.isMobile());
+    mc.setState('systime', mc.utils.systime(new Date()));
+    mc.setState('sysdate', mc.utils.sysdate(new Date()));
+    mc.setState('isMobile', mc.utils.isMobile());
 
     return (
         <Tabs
@@ -21,7 +21,7 @@ const MainTab = () => {
                 if (selectedKey) {
                     //! 이부분 추후 수정하자
                     setKey(selectedKey);
-                    mc.setValue('currTab', selectedKey); 
+                    mc.setState('currTab', selectedKey); 
                 }
             }}
             className="mgl-01 mgr-01 mb-3"

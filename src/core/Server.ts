@@ -17,7 +17,7 @@ class Server {
 				console.log(res);
 				console.log("서버에서 가져옴 끝 ---------------------------------");
 				
-				mc.setValue(name, res);
+				mc.setState(name, res);
 			})
 		
 	}

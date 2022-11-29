@@ -4,7 +4,7 @@ import MainTab from './MainTab';
 import Introduction from './Introduction';
 
 const Main = () => {
-  const isMobile: boolean = mc.getValue('isMobile');
+  const isMobile: boolean = mc.getState('isMobile');
 
   return (
     <>

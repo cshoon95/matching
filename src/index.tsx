@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import Main from './comp/Main';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createSlice, composeWithDevTools } from '@reduxjs/toolkit';
-import { createSlice, applyMiddleware, combineReducers, Store } from 'redux';
+import { createSlice } from '@reduxjs/toolkit';
+import { applyMiddleware, combineReducers, Store } from 'redux';
 import thunk from 'redux-thunk';
 import data from './store/Data';
 import view from './store/View';
@@ -16,6 +16,7 @@ import queryString from "query-string";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import { store } from './store/Store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -28,10 +29,6 @@ const rootReducer = combineReducers({
 
 export type RootState = ReturnType<typeof rootReducer>;
 
-const store: Store = createStore(
-  rootReducer,
-  // composeWithDevTools(applyMiddleware(thunk))
-)
 
 mc.init(store);
 
